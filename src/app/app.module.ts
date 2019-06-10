@@ -4,6 +4,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 @NgModule({
     declarations: [
@@ -12,7 +14,8 @@ import {AppComponent} from './app.component';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgbModule
+        NgbModule,
+        EffectsModule.forRoot([AppEffects])
     ],
     providers: [],
     bootstrap: [AppComponent]
