@@ -18,8 +18,8 @@ export class AppComponent {
 
     constructor() {
         const m = Map({abc: '1'});
-        let myListA = List([]);
-        let myListB = myListA.push(['Hello World']);
+        const myListA = List([]);
+        const myListB = myListA.push(['Hello World']);
         console.log(myListB.toArray());
 
         // var map1 = Map({ a: 1, b: 2, c: 3 });
