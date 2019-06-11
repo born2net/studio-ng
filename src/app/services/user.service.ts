@@ -9,9 +9,9 @@ import { IUserHttp } from '../models/http-models/user-http.interface';
 export class UserService {
   usersUrl = `${environment.apiUrl}users.json`;
 
-  // constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
-  // getUsers(): Observable<IUserHttp> {
-  //   return this._http.get<IUserHttp>(this.usersUrl);
-  // }
+  getUsers(): Observable<IUserHttp> {
+    return this._http.get<IUserHttp>(this.usersUrl);
+  }
 }

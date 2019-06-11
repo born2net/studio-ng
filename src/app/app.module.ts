@@ -11,9 +11,11 @@ import {ConfigEffects} from './store/effects/config.effects';
 import {UserEffects} from './store/effects/user.effects';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
+import {UserService} from './services/user.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 // import { AppEffects } from './app.effects';
 
-
+// ref: https://medium.com/frontend-fun/angular-ngrx-a-clean-and-clear-introduction-4ed61c89c1fc
 
 @NgModule({
     declarations: [
@@ -22,14 +24,15 @@ import {environment} from '../environments/environment';
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HttpClientModule,
         NgbModule,
         StoreModule.forRoot(appReducers),
         EffectsModule.forRoot([UserEffects, ConfigEffects]),
-        // StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
+        StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
 
     ],
-    providers: [],
+    providers: [UserService, HttpClient],
     bootstrap: [AppComponent]
 })
 export class AppModule {

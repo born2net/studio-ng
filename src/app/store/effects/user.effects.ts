@@ -29,15 +29,15 @@ export class UserEffects {
     })
   );
 
-  // @Effect()
-  // getUsers$ = this._actions$.pipe(
-  //   ofType<GetUsers>(EUserActions.GetUsers),
-  //   switchMap(() => this._userService.getUsers()),
-  //   switchMap((userHttp: IUserHttp) => of(new GetUsersSuccess(userHttp.users)))
-  // );
+  @Effect()
+  getUsers$ = this._actions$.pipe(
+    ofType<GetUsers>(EUserActions.GetUsers),
+    switchMap(() => this._userService.getUsers()),
+    switchMap((userHttp: IUserHttp) => of(new GetUsersSuccess(userHttp.users)))
+  );
 
   constructor(
-    // private _userService: UserService,
+    private _userService: UserService,
     private _actions$: Actions,
     private _store: Store<IAppState>
   ) {}
