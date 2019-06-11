@@ -18,6 +18,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 // import { AppEffects } from './app.effects';
 
 // ref: https://medium.com/frontend-fun/angular-ngrx-a-clean-and-clear-introduction-4ed61c89c1fc
+// ref: https://www.intertech.com/Blog/ngrx-tutorial-actions-reducers-and-effects/
+// ref: https://malcoded.com/posts/angular-ngrx-guide/
 
 @NgModule({
     declarations: [

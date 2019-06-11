@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {faStar as farStar1} from '@fortawesome/free-regular-svg-icons';
 import {faStar as fasStar2} from '@fortawesome/free-solid-svg-icons';
-
+import {List, Map} from 'immutable';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +17,14 @@ export class AppComponent {
     public magicLevel;
 
     constructor() {
-        const abc = 22;
-        console.log(abc);
+        const m = Map({abc: '1'});
+        let myListA = List([]);
+        let myListB = myListA.push(['Hello World']);
+        console.log(myListB.toArray());
+
+        // var map1 = Map({ a: 1, b: 2, c: 3 });
+        // var map2 = map1.set('b', 50);
+
+
     }
 }
